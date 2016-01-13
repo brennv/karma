@@ -1,0 +1,216 @@
+/*
+
+*/
+
+body {
+  /* background: #fafafa;  white; */
+  background: linear-gradient(to bottom, rgba(250,198,149,0.1) 0%,rgba(239,141,49,0.19) 88%,rgba(239,141,49,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* color: #333; */
+}
+
+a { 
+  color: purple;
+  text-decoration: none;
+}
+
+a.alt {
+  color: orange;
+  text-decoration: none;
+}
+
+paper-toolbar.main-toolbar {
+  /* background: #FF8040;  transparent; */
+  background: linear-gradient(to bottom, rgba(255,146,10,0.5) 0%,rgba(255,175,75,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: purple;
+  width: 100%;
+}
+
+paper-toolbar.menu-toolbar {
+  background: linear-gradient(to bottom, rgba(255,146,10,0.5) 0%,rgba(255,175,75,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: purple;
+  width: 100%;
+}
+
+
+paper-menu.menu-master {
+  color: purple;
+}
+
+paper-menu.menu-content {
+  color: purple;
+  margin-left: 16px;
+}
+
+paper-item.menu-header {
+  color: orange;
+}
+
+
+.welcome-button {
+  min-width: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+paper-material.intro-card {
+  height: auto;
+  width: 100%;
+  padding: 0 0 2px 0;
+  background: transparent;
+  color: purple;
+}
+
+paper-material.project-card {
+  border-radius: 5px;
+  height: 60px;
+  padding: 16px 16px 16px 16px;
+  width: calc(90%);
+  min-width: 280px;
+  margin: 16px auto;
+  background: white;
+  color: purple;
+}
+
+
+paper-toolbar.welcome-toolbar {
+  /* background: #FF8040;  transparent; */
+  background: white; /* rgba(255,168,76,1); */
+  width: 100%;
+  color: purple;
+}
+
+paper-material.welcome-card-top {
+  height: 600px;
+  width: 100%;
+  padding: 0 0 2px 0;
+  background: white;
+  color: purple;
+}
+
+paper-material.welcome-card-midtop {
+  height: 500px;
+  width: 100%;
+  padding: 0 0 2px 0;
+  background: linear-gradient(to bottom, rgba(255,168,76,1) 0%,rgba(255,123,13,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: purple;
+}
+
+paper-material.welcome-card-midbottom {
+  height: 500px;
+  width: 100%;
+  padding: 0 0 2px 0;
+  background: transparent;
+  color: purple;
+}
+
+paper-material.welcome-card-bottom {
+  height: 200px;
+  width: 100%;
+  padding: 0 0 2px 0;
+  background: linear-gradient(to bottom, rgba(255,146,10,0.5) 0%,rgba(255,175,75,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: purple;
+}
+
+paper-item.welcome-card {
+  color: purple;
+  padding: 40px 0 0 0;
+}
+
+div.welcome-content-primary {
+  margin: 80px;
+}
+
+div.welcome-content-secondary {
+  margin: 80px;
+}
+
+
+/*
+paper-toolbar#projects {
+  background: white;  /* transparent; 
+  color: purple;
+  width: 100%;
+}
+
+paper-item.menu-trigger {
+  color: purple;
+}
+
+paper-item.menu-item {
+  color: black;
+  margin-left: 15px;
+}
+
+
+section.page-section {
+  width: 300px;
+  margin-left: calc(2%);
+  margin-top: 8px;
+  height: 400px;
+}
+
+paper-material.card-section {
+  width: calc(98.66% - 400px);
+  position: fixed;
+  left: 160px;
+  top: 40px;
+}
+
+paper-material.project-card {
+  border-radius: 5px;
+  height: 88px;
+  padding: 0px 0 0px 0;
+  width: 280px;
+  margin: 0px;
+  margin-left: 16px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  background: white;
+  overflow: hidden;
+}
+
+paper-material.project-card-initial {
+  border-radius: 0px;
+  height: 280px;
+  padding: 0px 0 0px 0;
+  width: 280px;
+  margin: 0px;
+  margin-left: 16px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  background: #F598EA;
+  overflow: hidden;
+}
+
+paper-material.project-menu-card {
+  border-radius: 5px;
+  height: 240px;
+  padding: 0px 0 0px 0;
+  width: 280px;
+  margin: 0px;
+  margin-left: 16px;
+  margin-bottom: 18px;
+  background: white;
+  overflow: hidden;
+}
+
+.card {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#source {
+  font-size: 17px;
+}
+
+paper-dialog.size-position {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 300px;
+  height: 80px;
+  overflow: auto;
+}
+ */
