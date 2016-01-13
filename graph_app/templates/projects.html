@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block body %}
+<paper-drawer-panel force-narrow class="menu-drawer">
+
+  <paper-header-panel drawer>
+    {% include "projects_menu.html" %}
+  </paper-header-panel>
+
+  <paper-scroll-header-panel main>
+
+    {% include "index_toolbar.html" %}
+
+    <!-- Main Content -->
+    <paper-material class="intro-card" elevation="0">
+      <paper-item>
+        <span class="flex"></span>
+        <div><b>Projects</b></div>
+        <span class="flex"></span>
+      <paper-item>
+    </paper-material>
+
+    <div class="horizontal layout wrap"> 
+      {% for row in offers %}
+        <paper-material class="project-card">
+          <p class="card"><b>{{ row.offer.title }}</b></p>
+          {% if request.path == "/" %}
+            <p class="card">by <a href="{{ url_for('profile', username=row.username) }}">{{ row.username }}</a></p>
+          {% endif %}
+          <p class="card">on {{ row.offer.date }}</p>
+          <p class="card"><a href="{{ url_for('like_offer', offer_id=row.offer.id) }}">like</a><br></p>
+          <p class="card"><i>{{ ", ".join(row.tags) }}</i><br></p>
+          <p class="card">{{ row.offer.text }}</p>
+        </paper-material>
+      {% else %}
+        <paper-material class="intro-card" elevation="0">
+          <paper-item>
+            <span class="flex"></span>
+            <div>There aren't any recent offers</div>
+            <span class="flex"></span>
+          <paper-item>
+        </paper-material>
+      {% endfor %}
+    </div>
+
+  </paper-scroll-header-panel>
+</paper-drawer-panel>
+
+<floating-add-button id="fab-index"></floating-add-button>
+
+{% if session.username %}
+  {% include "add_project.html" %}
+{% endif %}
+
+{% endblock %}

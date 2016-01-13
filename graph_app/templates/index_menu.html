@@ -1,0 +1,19 @@
+{% block body %}
+<paper-toolbar class="menu-toolbar">
+  <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+  <div class="title">
+    <paper-icon-button icon="favorite"></paper-icon-button>karma<b>source</b>
+  </div>
+</paper-toolbar>
+
+<paper-item class="menu-header">
+  <!-- <a class= "alt" href="{{ url_for('index') }}"><paper-icon-button icon="refresh"></paper-icon-button></a> -->
+  <div>Welcome</div>
+</paper-item>
+
+<paper-menu class="menu-master">
+  <paper-item>Projects</paper-item>
+  <paper-item>How it works</paper-item>
+  <paper-item>About</paper-item>
+</paper-menu>
+{% endblock %}

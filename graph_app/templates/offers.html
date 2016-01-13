@@ -1,0 +1,123 @@
+<!-- Runs drawer panel -->
+<paper-drawer-panel force-narrow class="menu-drawer">
+  <paper-header-panel drawer>
+
+    <paper-toolbar class="menu-toolbar">
+      <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+      <div class="title">
+        <paper-icon-button icon="favorite"></paper-icon-button>karma<b>source</b>
+      </div>
+    </paper-toolbar>
+
+    <paper-item class="menu-header">
+      <a class= "alt" href="{{ url_for('index') }}"><paper-icon-button icon="refresh"></paper-icon-button></a>
+      <div>Projects</div>
+    </paper-item>
+
+    <paper-menu class="menu-master">
+      <paper-submenu>
+        <paper-item class="menu-trigger">Causes</paper-item>
+        <paper-menu class="menu-content">
+          <paper-item class="menu-item">Non-profit</paper-item>
+          <paper-item class="menu-item">Education</paper-item>
+          <paper-item class="menu-item">Research</paper-item>
+          <paper-item class="menu-item">Open source</paper-item>
+        </paper-menu>
+      </paper-submenu>
+
+      <paper-submenu>
+        <paper-item class="menu-trigger">Work</paper-item>
+        <paper-menu class="menu-content">
+        {% set works = ['Web Development', 'Graphcs & Design', 'Databases', 'Testing', 'Tutoring'] %}
+        {% for work in works %}
+          <paper-item class="menu-item">{{ work }}</paper-item>
+        {% endfor %}
+        </paper-menu>
+      </paper-submenu>
+
+      <paper-submenu>
+        <paper-item class="menu-trigger">Languages</paper-item>
+        <paper-menu class="menu-content">
+        {% set languages = ['Python', 'Javascript', 'Elm', 'Erlang', 'HTML & CSS', 'Rusthon'] %}
+        {% for language in languages %}
+          <paper-item class="menu-item">{{ language }}</paper-item>
+        {% endfor %}
+        </paper-menu>
+      </paper-submenu>
+
+      <paper-submenu>
+        <paper-item class="menu-trigger">Activity</paper-item>
+        <paper-menu class="menu-content">
+        {% set activities = ['Proposed', 'Active', 'Archived'] %}
+        {% for activity in activities %}
+          <paper-item class="menu-item">{{ activity }}</paper-item>
+        {% endfor %}
+        </paper-menu>
+      </paper-submenu>
+
+    </paper-menu>
+  </paper-header-panel>
+
+  <paper-scroll-header-panel main>
+    <paper-toolbar class="main-toolbar">
+
+      <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+
+      <!-- Application icon & name -->
+      <div class="title">
+        <paper-icon-button icon="favorite"></paper-icon-button>karma<b>source</b>
+      </div>
+      <span class="flex"></span>
+
+      <!-- Toolbar icons -->
+      {% if not session.username %}
+        <div class="app-subtitle"></div>
+        <a href='/login'>
+          <paper-icon-button icon="account-circle"></paper-icon-button>
+        </a>
+      {% else %}
+        <div class="username">{{ session.username }}</div>
+        <a href="{{ url_for('profile', username=session.username) }}">
+          <paper-icon-button icon="face" on-tap="moreAction"></paper-icon-button>
+        </a>
+        <a href="{{ url_for('logout') }}">
+          <paper-icon-button icon="exit-to-app" on-tap="moreAction"></paper-icon-button>
+        </a>
+      {% endif %}
+
+    </paper-toolbar>
+
+    <!-- Main Content -->
+    <paper-material class="intro-card" elevation="0">
+      <paper-item>
+        <span class="flex"></span>
+        <div><b>Projects</b></div>
+        <span class="flex"></span>
+      <paper-item>
+    </paper-material>
+
+    <div class="horizontal layout wrap"> 
+      {% for row in offers %}
+        <paper-material class="project-card">
+          <p class="card"><b>{{ row.offer.title }}</b></p>
+          {% if request.path == "/" %}
+            <p class="card">by <a href="{{ url_for('profile', username=row.username) }}">{{ row.username }}</a></p>
+          {% endif %}
+          <p class="card">on {{ row.offer.date }}</p>
+          <p class="card"><a href="{{ url_for('like_offer', offer_id=row.offer.id) }}">like</a><br></p>
+          <p class="card"><i>{{ ", ".join(row.tags) }}</i><br></p>
+          <p class="card">{{ row.offer.text }}</p>
+        </paper-material>
+      {% else %}
+        <paper-material class="intro-card" elevation="0">
+          <paper-item>
+            <span class="flex"></span>
+            <div>There aren't any recent offers</div>
+            <span class="flex"></span>
+          <paper-item>
+        </paper-material>
+      {% endfor %}
+    </div>
+
+  </paper-scroll-header-panel>
+</paper-drawer-panel>

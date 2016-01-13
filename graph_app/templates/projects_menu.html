@@ -1,0 +1,56 @@
+{% block body %}
+<paper-toolbar class="menu-toolbar">
+  <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+  <div class="title">
+    <paper-icon-button icon="favorite"></paper-icon-button>karma<b>source</b>
+  </div>
+</paper-toolbar>
+
+<paper-item class="menu-header">
+  <!-- <a class= "alt" href="{{ url_for('index') }}"><paper-icon-button icon="refresh"></paper-icon-button></a> -->
+  <div>Projects</div>
+</paper-item>
+
+<paper-menu class="menu-master">
+  <paper-submenu>
+    <paper-item class="menu-trigger">Causes</paper-item>
+    <paper-menu class="menu-content">
+      <paper-item>Non-profit</paper-item>
+      <paper-item>Education</paper-item>
+      <paper-item>Research</paper-item>
+      <paper-item>Open source</paper-item>
+    </paper-menu>
+  </paper-submenu>
+
+  <paper-submenu>
+    <paper-item class="menu-trigger">Work</paper-item>
+    <paper-menu class="menu-content">
+    {% set works = ['Web Development', 'Graphcs & Design', 'Databases', 'Testing', 'Tutoring'] %}
+    {% for work in works %}
+      <paper-item>{{ work }}</paper-item>
+    {% endfor %}
+    </paper-menu>
+  </paper-submenu>
+
+  <paper-submenu>
+    <paper-item class="menu-trigger">Languages</paper-item>
+    <paper-menu class="menu-content">
+    {% set languages = ['Python', 'Javascript', 'Elm', 'Erlang', 'HTML & CSS', 'Rusthon'] %}
+    {% for language in languages %}
+      <paper-item>{{ language }}</paper-item>
+    {% endfor %}
+    </paper-menu>
+  </paper-submenu>
+
+  <paper-submenu>
+    <paper-item class="menu-trigger">Activity</paper-item>
+    <paper-menu class="menu-content">
+    {% set activities = ['Proposed', 'Active', 'Archived'] %}
+    {% for activity in activities %}
+      <paper-item>{{ activity }}</paper-item>
+    {% endfor %}
+    </paper-menu>
+  </paper-submenu>
+
+</paper-menu>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!doctype html>
+<!--
+  Layout is the root page, all routes are extended from here.
+-->
+
+<html lang="">
+
+<head>
+
+  <title>karmasource</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../static/styles/main.css">
+  <script src="../static/components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../static/elements/elements.html">
+
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+
+  <!-- Show route content -->
+  {% block body %}{% endblock %}
+
+  <!-- Show messages -->
+  {% for message in get_flashed_messages() %}
+    <paper-dialog class="size-position" opened>
+      <div class="flash">{{ message }}</div>
+    </paper-dialog>
+  {% endfor %}
+
+</body>
+</html>

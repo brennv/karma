@@ -1,0 +1,38 @@
+{% block body %}
+<section>
+  <paper-material elevation="1">
+    <h3 class="card">Share New Offer</h3>
+    <form action="{{ url_for('add_offer') }}" method="post">
+      <dl>
+
+        <paper-input-container class="card" always-float-label>
+          <label>Title...</label>
+          <input type="text" size="30" name="title">
+        </paper-input-container>
+        
+        <paper-input-container class="card" always-float-label>
+          <label>Tags (comma seperated)...</label>
+          <input type="text" size="30" name="tags">
+        </paper-input-container>
+
+        <paper-input-container class="card" always-float-label>
+          <label>Text...</label>
+          <textarea name="text" rows="5" cols="40"></textarea>
+        </paper-input-container>
+
+      </dl>
+
+      <input type="submit" class="card">
+
+      <!--
+      <button class= "send" type="submit">
+        <paper-button raised>
+        <iron-icon class="share" icon="send"></iron-icon>
+        </paper-button>
+      </button>
+      -->
+
+    </form>
+  </paper-material>
+</section>
+{% endblock %}

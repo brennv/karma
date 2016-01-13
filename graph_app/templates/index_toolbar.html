@@ -1,0 +1,36 @@
+{% block body %}
+
+
+<paper-toolbar class="main-toolbar">
+
+  <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+
+  <!-- Application icon & name -->
+  <div class="title">
+    <paper-icon-button icon="favorite"></paper-icon-button>karma<b>source</b>
+  </div>
+  <span class="flex"></span>
+
+  <!-- Toolbar icons -->
+  {% if not session.username %}
+    <div class="app-subtitle"></div>
+    <a href='/login'>
+      <paper-icon-button icon="account-circle"></paper-icon-button>
+    </a>
+  {% else %}
+    <div class="username">{{ session.username }}</div>
+    <a href="{{ url_for('profile', username=session.username) }}">
+      <paper-icon-button icon="face" on-tap="moreAction"></paper-icon-button>
+    </a>
+    <a href="{{ url_for('logout') }}">
+      <paper-icon-button icon="exit-to-app" on-tap="moreAction"></paper-icon-button>
+    </a>
+  {% endif %}
+
+  <div class="bottom"></div>
+  <span class="flex bottom"></span>
+  <button-stat class="bottom"></button-stat>
+
+</paper-toolbar>
+
+{% endblock %}

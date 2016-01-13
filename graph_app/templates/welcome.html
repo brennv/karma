@@ -1,0 +1,55 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<paper-drawer-panel force-narrow class="menu-drawer">
+
+  <paper-header-panel drawer>
+    {% include "index_menu.html" %}
+  </paper-header-panel>
+
+  <paper-scroll-header-panel main>
+
+    {% include "welcome_toolbar.html" %}
+
+    <!-- Main Content -->
+    <paper-material class="welcome-card-top horizontal layout center wrap" elevation="0">
+      <div class="flex vertical layout center welcome-button">
+        <div><b>Earn karma</b></div>
+        <div><paper-item>See projects offering karma</paper-item></div>
+      </div>
+      <div class="flex vertical layout center welcome-button">
+        <div><b>Add karma to any project</b></div>
+        <div><paper-item>Paste url here</paper-item></div>
+      </div>
+
+
+
+    </paper-material>
+
+    <paper-material class="welcome-card-midtop" elevation="0">
+      <paper-item class="welcome-card">
+        <span class="flex"></span>
+        <div><b>Why karma?</b></div>
+        <span class="flex"></span>
+      <paper-item>
+    </paper-material>
+
+    <paper-material class="welcome-card-midbottom" elevation="0">
+      <paper-item class="welcome-card">
+        <span class="flex"></span>
+        <div><b>How it works</b></div>
+        <span class="flex"></span>
+      </paper-item>
+    </paper-material>
+
+    <paper-material class="welcome-card-bottom" elevation="0">
+      <paper-item class="welcome-card">
+        <span class="flex"></span>
+        <div><b>Get involved</b></div>
+        <span class="flex"></span>
+      </paper-item>
+    </paper-material>
+
+  </paper-scroll-header-panel>
+</paper-drawer-panel>
+{% endblock %}
