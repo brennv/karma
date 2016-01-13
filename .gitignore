@@ -62,3 +62,6 @@ target/
 
 # Gists
 gists/
+
+# static components
+graph_app/static/components
