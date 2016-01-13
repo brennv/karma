@@ -61,4 +61,4 @@ target/
 .vagrant/
 
 # Gists
-.gists/
+gists/
